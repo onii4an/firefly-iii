@@ -62,7 +62,7 @@ class SecureHeaders
 
         $route = $request->route();
         if (null !== $route && 'oauth/authorize' !== $route->uri) {
-            $csp[] = "form-action 'self'";
+            $csp[] = "form-action 'self' 'unsafe-eval' 'unsafe-inline'";
         }
 
         $featurePolicies = [
